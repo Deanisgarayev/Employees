@@ -1,10 +1,10 @@
-package Application.com.EmployeesService;
+package Application.com.services;
 
-import Application.com.Exceptions.InvalidInputException;
+import Application.com.exceptions.InvalidInputException;
+import Application.com.interfaces.EmployeeService;
 import Application.com.skypro.EmployeeBook;
-import Application.com.Exceptions.EmployeeAlreadyAddedException;
-import Application.com.Exceptions.EmployeeNotFoundException;
-import org.apache.commons.lang3.StringUtils;
+import Application.com.exceptions.EmployeeAlreadyAddedException;
+import Application.com.exceptions.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -61,16 +61,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
 
     private void validate(String firstname, String surname) {
-//          public validate (String... names)
-//          for(String name:names){
-//          if(!StringUtils.isAlpha(name)){
-// throw new InvalidInputException("wrong spelling, you can write only by alphabet");
-//          / public method(Employee employee){
-//          validate(employee.getFirstname,employee.getSurname)
-//          employee.setFirstname(StringUtils.capitalize(employee.getFirstname.toLowerCase());)
-//          employee.setFirstname(StringUtils.capitalize(employee.getFirstname.toLowerCase());)/
         if (!(isAlpha(firstname) && isAlpha(surname))) {
-            throw new InvalidInputException("wrong spelling, you can write only by alphabet");
+            throw new InvalidInputException("you can write only by alphabet");
         }
     }
 

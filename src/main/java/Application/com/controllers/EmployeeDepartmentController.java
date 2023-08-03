@@ -1,5 +1,6 @@
-package Application.com.homework28;
+package Application.com.controllers;
 
+import Application.com.interfaces.EmployeeDepartment;
 import Application.com.skypro.EmployeeBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,10 @@ public class EmployeeDepartmentController {
 @Autowired
     public EmployeeDepartmentController(EmployeeDepartment employeeDepartment) {
         this.employeeDepartment = employeeDepartment;
+    }
+    @GetMapping("/sum")
+    public int findTotalSumByDepartment(@RequestParam("departmentID")Integer departmentID) {
+        return employeeDepartment.findTotalSumByDepartment(departmentID);
     }
 
     @GetMapping("/min-salary")

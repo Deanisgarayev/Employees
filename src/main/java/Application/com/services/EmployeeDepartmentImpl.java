@@ -1,6 +1,7 @@
-package Application.com.homework28;
+package Application.com.services;
 
-import Application.com.EmployeesService.EmployeeService;
+import Application.com.interfaces.EmployeeDepartment;
+import Application.com.interfaces.EmployeeService;
 import Application.com.skypro.EmployeeBook;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,20 @@ public class EmployeeDepartmentImpl implements EmployeeDepartment {
 
     public EmployeeDepartmentImpl(EmployeeService employeeService) {
         this.employeeService = employeeService;
+    }
+
+    @Override
+    public int findTotalSumByDepartment(Integer departmentID) {
+        return employeeService.findAll()
+                .stream()
+                .filter(employee -> Objects.equals(employee.getDepartmentID(), departmentID))
+                .mapToInt(employee -> employee.getSalary())
+                .sum();
+
+
+
+
+//                .orElseThrow(() -> new IllegalArgumentException("there's not employee in the department"));
     }
 
 

@@ -1,4 +1,4 @@
-package Application.com.homework28;
+package Application.com.interfaces;
 
 import Application.com.skypro.EmployeeBook;
 
@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface EmployeeDepartment {
+        int findTotalSumByDepartment(Integer departmentID);
 
         EmployeeBook findEmployeeWithMinSalary (Integer departmentID);
 
