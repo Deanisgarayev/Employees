@@ -16,6 +16,7 @@ public class EmployeeDepartmentImpl implements EmployeeDepartment {
         this.employeeService = employeeService;
     }
 
+//    gets total sum by department
     @Override
     public int findTotalSumByDepartment(Integer departmentID) {
         return employeeService.findAll()
@@ -23,14 +24,9 @@ public class EmployeeDepartmentImpl implements EmployeeDepartment {
                 .filter(employee -> Objects.equals(employee.getDepartmentID(), departmentID))
                 .mapToInt(employee -> employee.getSalary())
                 .sum();
-
-
-
-
-//                .orElseThrow(() -> new IllegalArgumentException("there's not employee in the department"));
     }
 
-
+//    gets employee with max salary
     @Override
     public EmployeeBook findEmployeeWithMaxSalary(Integer departmentID) {
        return employeeService.findAll()
@@ -40,7 +36,7 @@ public class EmployeeDepartmentImpl implements EmployeeDepartment {
                 .orElseThrow(() -> new IllegalArgumentException("there's not employee in the department"));
     }
 
-
+//    gets employee with min salary
     @Override
     public EmployeeBook findEmployeeWithMinSalary(Integer departmentID) {
         return employeeService.findAll()
@@ -50,6 +46,7 @@ public class EmployeeDepartmentImpl implements EmployeeDepartment {
                 .orElseThrow(() -> new IllegalArgumentException("there's not employee in the department"));
     }
 
+//    gets all employees by department
     @Override
     public Collection<EmployeeBook> findAllEmployeesByDepartment (Integer departmentID) {
         return employeeService.findAll()
@@ -58,7 +55,7 @@ public class EmployeeDepartmentImpl implements EmployeeDepartment {
                 .collect(Collectors.toList());
     }
 
-
+//    gets employees grouping by department
     @Override
     public  Map<Integer, List<EmployeeBook>> findAll() {
         return employeeService.findAll()

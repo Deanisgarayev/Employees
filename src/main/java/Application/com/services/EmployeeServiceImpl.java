@@ -23,8 +23,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             this.employeeBooks = new HashMap<>();
         }
 
+//     adds employee
         @Override
-
         public EmployeeBook add(String firstname, String surname, Integer salary, Integer departmentID) {
             validate(firstname, surname);
             EmployeeBook employeeBook = new EmployeeBook(firstname, surname, salary, departmentID);
@@ -35,6 +35,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             return employeeBook;
         }
 
+//        deletes employee
         @Override
         public EmployeeBook remove(String firstname, String surname, Integer salary, Integer departmentID) {
             validate(firstname, surname);
@@ -45,6 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new EmployeeNotFoundException("EmployeeIsNotFound");
         }
 
+//        gets employee
         @Override
         public EmployeeBook find(String firstname, String surname, Integer salary, Integer departmentID) {
             validate(firstname, surname);
@@ -55,11 +57,13 @@ public class EmployeeServiceImpl implements EmployeeService {
             throw new EmployeeNotFoundException("EmployeeIsNotFound");
         }
 
+//        gets all employees
         @Override
         public Collection<EmployeeBook> findAll() {
             return Collections.unmodifiableCollection(employeeBooks.values());
         }
 
+//        validates the spelling by alphabet
     private void validate(String firstname, String surname) {
         if (!(isAlpha(firstname) && isAlpha(surname))) {
             throw new InvalidInputException("you can write only by alphabet");

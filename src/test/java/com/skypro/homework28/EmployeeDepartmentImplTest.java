@@ -13,6 +13,7 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
@@ -36,9 +37,10 @@ public class EmployeeDepartmentImplTest {
                 new EmployeeBook("Peter", "Skripen", 6000, 2)
         );
     }
+
         private List<EmployeeBook> employeeList2 () {
-            return List.of(new EmployeeBook("Lex", "Luther", 6666, 1),
-                    new EmployeeBook("Roy", "Gaines", 7000, 1)
+            return List.of(new EmployeeBook("Lex", "Luther", 6666, 1)
+
 
             );
     }
