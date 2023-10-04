@@ -17,36 +17,37 @@ import java.util.Map;
 
 public class EmployeeDepartmentController {
     private final EmployeeDepartment employeeDepartment;
-@Autowired
+
+    @Autowired
     public EmployeeDepartmentController(EmployeeDepartment employeeDepartment) {
         this.employeeDepartment = employeeDepartment;
     }
 
-//    get total sum by department
+    //    get total sum by department
     @GetMapping("/sum")
-    public int findTotalSumByDepartment(@RequestParam("departmentID")Integer departmentID) {
+    public int findTotalSumByDepartment(@RequestParam("departmentID") Integer departmentID) {
         return employeeDepartment.findTotalSumByDepartment(departmentID);
     }
 
-//    get employee with mix salary
+    //    get employee with mix salary
     @GetMapping("/min-salary")
     public EmployeeBook findEmployeeWithMinSalary(@RequestParam("departmentID") Integer departmentID) {
-        return employeeDepartment.findEmployeeWithMinSalary( departmentID);
+        return employeeDepartment.findEmployeeWithMinSalary(departmentID);
     }
 
-//    get employee with max salary
+    //    get employee with max salary
     @GetMapping("/max-salary")
     public EmployeeBook findEmployeeWithMaxSalary(@RequestParam("departmentID") Integer departmentID) {
         return employeeDepartment.findEmployeeWithMaxSalary(departmentID);
     }
 
-//    get all employees by department
+    //    get all employees by department
     @GetMapping(value = "/all", params = "departmentID")
-    public Collection <EmployeeBook> findAllEmployeesByDepartment (@RequestParam("departmentID") Integer departmentID) {
-        return employeeDepartment.findAllEmployeesByDepartment (departmentID);
+    public Collection<EmployeeBook> findAllEmployeesByDepartment(@RequestParam("departmentID") Integer departmentID) {
+        return employeeDepartment.findAllEmployeesByDepartment(departmentID);
     }
 
-//    get employees grouping by department
+    //    get employees grouping by department
     @GetMapping("/all")
     public Map<Integer, List<EmployeeBook>> findAll() {
         return employeeDepartment.findAll();

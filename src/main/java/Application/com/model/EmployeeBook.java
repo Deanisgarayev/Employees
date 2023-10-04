@@ -2,13 +2,13 @@ package Application.com.model;
 
 import java.util.Objects;
 
-import static org.apache.commons.lang3.StringUtils.*;
+import static org.apache.commons.lang3.StringUtils.capitalize;
 
 public class EmployeeBook {
 
-    private String firstname;
+    private final String firstname;
 
-    private String surname;
+    private final String surname;
     private Integer salary;
     private Integer departmentID;
 
@@ -31,22 +31,21 @@ public class EmployeeBook {
         return salary;
     }
 
-    public Integer getDepartmentID() {
-        return departmentID;
+    public void setSalary(Integer salary) {
+        this.salary = salary;
     }
 
-    public String getFullName() {
-        return firstname + " " + surname;
+    public Integer getDepartmentID() {
+        return departmentID;
     }
 
     public void setDepartmentID(Integer departmentID) {
         this.departmentID = departmentID;
     }
 
-    public void setSalary(Integer salary) {
-        this.salary = salary;
+    public String getFullName() {
+        return firstname + " " + surname;
     }
-
 
     @Override
     public String toString() {

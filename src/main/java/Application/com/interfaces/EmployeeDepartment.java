@@ -7,15 +7,15 @@ import java.util.List;
 import java.util.Map;
 
 public interface EmployeeDepartment {
-        int findTotalSumByDepartment(Integer departmentID);
+    int findTotalSumByDepartment(Integer departmentID);
 
-        EmployeeBook findEmployeeWithMinSalary (Integer departmentID);
+    EmployeeBook findEmployeeWithMinSalary(Integer departmentID);
 
-        EmployeeBook findEmployeeWithMaxSalary (Integer departmentID);
+    EmployeeBook findEmployeeWithMaxSalary(Integer departmentID);
 
 
-        Collection<EmployeeBook>  findAllEmployeesByDepartment (Integer departmentID);
+    Collection<EmployeeBook> findAllEmployeesByDepartment(Integer departmentID);
 
-        Map<Integer, List<EmployeeBook>> findAll();
+    Map<Integer, List<EmployeeBook>> findAll();
 
 }

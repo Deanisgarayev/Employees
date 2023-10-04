@@ -1,8 +1,8 @@
 package com.skypro.homework28;
 
+import Application.com.model.EmployeeBook;
 import Application.com.services.EmployeeDepartmentImpl;
 import Application.com.services.EmployeeServiceImpl;
-import Application.com.model.EmployeeBook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -13,20 +13,21 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 public class EmployeeDepartmentImplTest {
     @Mock
     EmployeeServiceImpl employeeServiceImpl;
     @InjectMocks
-    EmployeeDepartmentImpl out ;
+    EmployeeDepartmentImpl out;
 
     @BeforeEach
     public void setUp() {
         when(employeeServiceImpl.findAll()).thenReturn(employeeList());
 //        when(employeeServiceImpl.findAll()).thenThrow(IllegalArgumentException.class);
     }
+
     private List<EmployeeBook> employeeList() {
         return List.of(new EmployeeBook("Lex", "Luther", 6666, 1),
                 new EmployeeBook("Roy", "Gaines", 7000, 1),
@@ -35,11 +36,11 @@ public class EmployeeDepartmentImplTest {
         );
     }
 
-        private List<EmployeeBook> employeeList2 () {
-            return List.of(new EmployeeBook("Lex", "Luther", 6666, 1)
+    private List<EmployeeBook> employeeList2() {
+        return List.of(new EmployeeBook("Lex", "Luther", 6666, 1)
 
 
-            );
+        );
     }
 
     @Test
@@ -50,13 +51,13 @@ public class EmployeeDepartmentImplTest {
 
     @Test
     public void ShouldReturnEmployeeWithMaxSalaryFromFirstDepartmentAndThrowExceptionByThirdDepartment() {
-        EmployeeBook employee = out.findEmployeeWithMaxSalary( 1);
+        EmployeeBook employee = out.findEmployeeWithMaxSalary(1);
         assertEquals("Roy", employee.getFirstname());
         assertEquals("Gaines", employee.getSurname());
         assertEquals(7000, employee.getSalary());
         assertEquals(1, employee.getDepartmentID());
         assertThrows(IllegalArgumentException.class,
-                ()->out.findEmployeeWithMaxSalary(3));
+                () -> out.findEmployeeWithMaxSalary(3));
     }
 
     @Test
@@ -67,17 +68,19 @@ public class EmployeeDepartmentImplTest {
         assertEquals(5000, employee.getSalary());
         assertEquals(2, employee.getDepartmentID());
         assertThrows(IllegalArgumentException.class,
-                ()->out.findEmployeeWithMinSalary(3));
+                () -> out.findEmployeeWithMinSalary(3));
 
     }
+
     @Test
     public void findAllEmployeesByDepartment() {
         assertIterableEquals(employeeList2(), out.findAllEmployeesByDepartment(1));
 
     }
+
     @Test
     public void findAll() {
-        assertNotNull( out.findAll());
+        assertNotNull(out.findAll());
 
 
     }
