@@ -1,6 +1,4 @@
-package Application.com.skypro;
-
-import org.apache.commons.lang3.StringUtils;
+package Application.com.model;
 
 import java.util.Objects;
 

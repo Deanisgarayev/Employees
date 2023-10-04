@@ -1,7 +1,7 @@
 package Application.com.controllers;
 
 import Application.com.interfaces.EmployeeDepartment;
-import Application.com.skypro.EmployeeBook;
+import Application.com.model.EmployeeBook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -2,7 +2,7 @@ package Application.com.services;
 
 import Application.com.exceptions.InvalidInputException;
 import Application.com.interfaces.EmployeeService;
-import Application.com.skypro.EmployeeBook;
+import Application.com.model.EmployeeBook;
 import Application.com.exceptions.EmployeeAlreadyAddedException;
 import Application.com.exceptions.EmployeeNotFoundException;
 import org.springframework.stereotype.Service;

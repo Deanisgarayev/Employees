@@ -2,7 +2,7 @@ package Application.com.services;
 
 import Application.com.interfaces.EmployeeDepartment;
 import Application.com.interfaces.EmployeeService;
-import Application.com.skypro.EmployeeBook;
+import Application.com.model.EmployeeBook;
 import org.springframework.stereotype.Service;
 
 import java.util.*;

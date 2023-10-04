@@ -1,6 +1,6 @@
 package Application.com.interfaces;
 
-import Application.com.skypro.EmployeeBook;
+import Application.com.model.EmployeeBook;
 
 import java.util.Collection;
 import java.util.List;

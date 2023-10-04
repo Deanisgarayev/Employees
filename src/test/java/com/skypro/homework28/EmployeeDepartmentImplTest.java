@@ -2,18 +2,15 @@ package com.skypro.homework28;
 
 import Application.com.services.EmployeeDepartmentImpl;
 import Application.com.services.EmployeeServiceImpl;
-import Application.com.skypro.EmployeeBook;
-import org.junit.jupiter.api.Assertions;
+import Application.com.model.EmployeeBook;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.List;
-import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;

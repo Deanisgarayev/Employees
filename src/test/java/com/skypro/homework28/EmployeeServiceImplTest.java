@@ -5,7 +5,7 @@ import Application.com.exceptions.EmployeeNotFoundException;
 import Application.com.exceptions.InvalidInputException;
 import Application.com.interfaces.EmployeeService;
 import Application.com.services.EmployeeServiceImpl;
-import Application.com.skypro.EmployeeBook;
+import Application.com.model.EmployeeBook;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
